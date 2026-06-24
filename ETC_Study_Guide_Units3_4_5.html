@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETC Study Guide – Units 3, 4 & 5</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --card: #20243a;
+    --accent: #6c63ff;
+    --accent2: #ff6584;
+    --accent3: #43e97b;
+    --accent4: #f9a825;
+    --text: #e8eaf6;
+    --muted: #9e9fb4;
+    --border: #2e3150;
+    --unit3: #6c63ff;
+    --unit4: #ff6584;
+    --unit5: #43e97b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ─── HEADER ─── */
+  .hero {
+    background: linear-gradient(135deg, #1a1d27 0%, #12152a 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 40px 36px;
+    text-align: center;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .hero p {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ─── NAV TABS ─── */
+  .nav-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 20px 40px 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+  }
+  .nav-tab {
+    padding: 10px 22px;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    transition: all 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+  .nav-tab:hover { color: var(--text); }
+  .nav-tab.active-u3 { background: var(--unit3); color: #fff; }
+  .nav-tab.active-u4 { background: var(--unit4); color: #fff; }
+  .nav-tab.active-u5 { background: var(--unit5); color: #111; }
+
+  /* ─── CONTENT PANES ─── */
+  .pane { display: none; padding: 40px; max-width: 960px; margin: 0 auto; }
+  .pane.active { display: block; }
+
+  /* ─── SECTION HEADERS ─── */
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .u3 .dot { background: var(--unit3); }
+  .u4 .dot { background: var(--unit4); }
+  .u5 .dot { background: var(--unit5); }
+
+  .section-sub {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 24px;
+    margin-left: 24px;
+  }
+
+  /* ─── CARDS ─── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+  .card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  .card-body { color: #c5c8e8; }
+  .card-body p { margin-bottom: 10px; }
+  .card-body p:last-child { margin-bottom: 0; }
+
+  /* ─── TOPIC TAG ─── */
+  .topic-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .tag-u3 { background: rgba(108,99,255,0.2); color: var(--unit3); }
+  .tag-u4 { background: rgba(255,101,132,0.2); color: var(--unit4); }
+  .tag-u5 { background: rgba(67,233,123,0.2); color: var(--unit5); }
+
+  /* ─── LISTS ─── */
+  ul.styled, ol.styled {
+    padding-left: 20px;
+    color: #c5c8e8;
+  }
+  ul.styled li, ol.styled li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  ul.styled li::marker { color: var(--accent); }
+  ol.styled li::marker { color: var(--accent2); font-weight: 700; }
+
+  /* ─── FORMAT BOX ─── */
+  .format-box {
+    background: #12152a;
+    border-left: 4px solid var(--accent4);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 14px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #dde0f8;
+    line-height: 1.8;
+    white-space: pre-wrap;
+  }
+
+  /* ─── EXAMPLE BOX ─── */
+  .example-box {
+    background: #111827;
+    border: 1px solid #2a3050;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 14px 0;
+  }
+  .example-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent3);
+    margin-bottom: 10px;
+  }
+  .example-box p, .example-box li { color: #b0b8d8; font-size: 14px; }
+
+  /* ─── TIP BOX ─── */
+  .tip-box {
+    background: rgba(249,168,37,0.08);
+    border: 1px solid rgba(249,168,37,0.3);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13.5px;
+    color: #f9e4a0;
+  }
+  .tip-box strong { color: var(--accent4); }
+
+  /* ─── COMPARISON TABLE ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 13.5px;
+  }
+  th {
+    background: var(--border);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 700;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #c5c8e8;
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+  }
+
+  /* ─── HIGHLIGHT INLINE ─── */
+  .hl { color: var(--accent4); font-weight: 700; }
+  .hl2 { color: var(--accent3); font-weight: 700; }
+  .hl3 { color: var(--accent); font-weight: 700; }
+
+  /* ─── STEP BOXES ─── */
+  .steps { counter-reset: step; }
+  .step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+  }
+  .step-num {
+    counter-increment: step;
+    background: var(--accent);
+    color: #fff;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 13px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step-content { flex: 1; }
+  .step-title { font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .step-desc { color: #b0b8d8; font-size: 14px; }
+
+  /* ─── GRID 2 COL ─── */
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 14px 0;
+  }
+  @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+
+  .mini-card {
+    background: #12152a;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .mini-card-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .mini-card p { color: #c5c8e8; font-size: 13.5px; }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Exam Prep</div>
+  <h1>📚 Effective Technical Communication</h1>
+  <p>Complete Study Guide — Units 3, 4 &amp; 5 | Based on your class PDFs | Zero marks lost guarantee</p>
+</div>
+
+<div class="nav-tabs">
+  <button class="nav-tab active-u3" onclick="showPane('u3', this)">Unit 3 – Information Transfer</button>
+  <button class="nav-tab" onclick="showPane('u4', this)">Unit 4 – Report Writing</button>
+  <button class="nav-tab" onclick="showPane('u5', this)">Unit 5 – Manual Writing</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ UNIT 3 ═══ -->
+<div id="u3" class="pane active">
+
+  <!-- 1. Introduction -->
+  <div class="section-title u3"><span class="dot"></span>1. Information Transfer – Introduction</div>
+  <div class="section-sub">What it is, why we do it, and when we use it</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u3">DEFINITION</div>
+    <div class="card-title">What is Information Transfer?</div>
+    <div class="card-body">
+      <p>Information Transfer means <span class="hl">converting information from one form to another</span>. When we have a large amount of data, it is hard to present it as plain text. So we use charts, tables, graphs, diagrams etc. to make it clear and easy to understand.</p>
+      <p>It works in two directions:</p>
+      <ul class="styled">
+        <li><span class="hl">Verbal → Non-Verbal:</span> Converting written text or spoken words into diagrams, tables, flowcharts, graphs etc.</li>
+        <li><span class="hl">Non-Verbal → Verbal:</span> Converting a diagram, chart, or graph back into a written paragraph or oral explanation.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u3">USES</div>
+    <div class="card-title">Why do we use Information Transfer?</div>
+    <div class="card-body">
+      <ul class="styled">
+        <li>It is a vital part of <strong>reports and proposals</strong>.</li>
+        <li>Helps in <strong>narration</strong>, physical &amp; process description.</li>
+        <li>Helps in <strong>listing, classifying, comparison &amp; contrast</strong>.</li>
+        <li>Shows <strong>cause and effect</strong> relationships.</li>
+        <li><strong>Generalizes</strong> from numerical data.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 2. Types of Graphic Representation -->
+  <div class="section-title u3"><span class="dot"></span>2. Types of Graphic Representation</div>
+  <div class="section-sub">The different non-verbal forms you can use</div>
+
+  <div class="card">
+    <div class="card-title">6 Main Types of Diagrams</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Type</th><th>What it is</th><th>Best used for</th></tr>
+        <tr><td><span class="hl">Maps &amp; Plans</span></td><td>Visual representation of areas, roads, buildings, rivers etc.</td><td>Showing physical locations, layouts</td></tr>
+        <tr><td><span class="hl">Tables</span></td><td>Data arranged in rows and columns</td><td>Comparing multiple items across multiple attributes</td></tr>
+        <tr><td><span class="hl">Graphs</span></td><td>Bar charts, pie charts, line graphs</td><td>Showing trends, proportions, comparisons</td></tr>
+        <tr><td><span class="hl">Tree Diagrams</span></td><td>Hierarchical diagram branching from one root</td><td>Showing classification, organizational hierarchy</td></tr>
+        <tr><td><span class="hl">Pictograms</span></td><td>Information shown using pictures/icons</td><td>Simple visual representation for general audience</td></tr>
+        <tr><td><span class="hl">Flow Charts</span></td><td>Step-by-step process shown with boxes and arrows</td><td>Processes, manufacturing steps, workflows</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 3. Verbal to Non-Verbal -->
+  <div class="section-title u3"><span class="dot"></span>3. Verbal to Non-Verbal (Text → Diagram)</div>
+  <div class="section-sub">Reading a passage and converting it into a chart, table, or flowchart</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u3">CONCEPT</div>
+    <div class="card-title">How to Convert Verbal to Non-Verbal</div>
+    <div class="card-body">
+      <p>Steps to follow:</p>
+      <ol class="styled">
+        <li>Read the text carefully and understand the main idea.</li>
+        <li>Identify the type of information (process? comparison? classification?).</li>
+        <li>Choose the most appropriate diagram type.</li>
+        <li>Extract the key data points / steps / categories.</li>
+        <li>Draw the diagram neatly with proper labels.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u3">EXAMPLE 1 — TEXT → FLOWCHART</div>
+    <div class="card-title">Manufacture of Paper (from your PDF)</div>
+    <div class="card-body">
+      <p><strong>Original Text:</strong> Paper is chiefly used for writing. The raw material is wood, grass, bamboo and rags. The raw material is cut into pieces, immersed in water to form pulp. The pulp is mixed with lime for whitening. This mixture is boiled at high pressure. The pulp is passed through wire meshes. The wet sheets are passed over heated rollers to dry and make thin sheets of paper.</p>
+      <div class="format-box">FLOWCHART FORMAT:
+
+[Raw Material: Wood, Grass, Bamboo, Rags]
+            ↓
+[Cut into Pieces]
+            ↓
+[Immersed in Water → Converts to Pulp]
+            ↓
+[Mixed with Lime for Whitening]
+            ↓
+[Boiled at High Pressure]
+            ↓
+[Passed through Wire Meshes]
+            ↓
+[Wet sheets passed over Heated Rollers]
+            ↓
+[Thin Sheets of Paper – READY]</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u3">EXAMPLE 2 — TEXT → TABLE</div>
+    <div class="card-title">Dialects of Languages (from your PDF)</div>
+    <div class="card-body">
+      <p><strong>Original Text:</strong> Marathi is the official language of Maharashtra, while Ahirani, Wharadi, Konkani and Malwani are its dialects. In Karnataka, Kannada is the official language. Tulu is spoken in Karnataka but has no script. In England, English is the official language while Scottish and Welsh are dialects.</p>
+      <div class="format-box">TABLE FORMAT:
+
+┌──────────────┬───────────────────┬──────────────────────────────┬──────────────────┐
+│ State        │ Official Language │ Dialects                     │ Special Note     │
+├──────────────┼───────────────────┼──────────────────────────────┼──────────────────┤
+│ Maharashtra  │ Marathi           │ Ahirani, Wharadi, Konkani,   │ —                │
+│              │                   │ Malwani                      │                  │
+├──────────────┼───────────────────┼──────────────────────────────┼──────────────────┤
+│ Karnataka    │ Kannada           │ Tulu                         │ No script        │
+├──────────────┼───────────────────┼──────────────────────────────┼──────────────────┤
+│ England      │ English           │ Scottish, Welsh              │ —                │
+└──────────────┴───────────────────┴──────────────────────────────┴──────────────────┘</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 4. Non-Verbal to Verbal -->
+  <div class="section-title u3"><span class="dot"></span>4. Non-Verbal to Verbal (Diagram → Paragraph)</div>
+  <div class="section-sub">Reading a diagram and writing it as a proper paragraph</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u3">CONCEPT</div>
+    <div class="card-title">How to Convert Non-Verbal to Verbal</div>
+    <div class="card-body">
+      <ol class="styled">
+        <li>Look at the diagram carefully. Understand what it is showing.</li>
+        <li>Identify the topic/title.</li>
+        <li>Note the sequence or relationship shown.</li>
+        <li>Write a proper paragraph with an introduction, middle, and conclusion.</li>
+        <li>Use connecting words: first, then, next, after that, finally, thus, therefore.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u3">EXAMPLE 1 — FLOWCHART → PARAGRAPH</div>
+    <div class="card-title">The Water Cycle (from your PDF)</div>
+    <div class="card-body">
+      <p><strong>Flowchart shows:</strong> Sunrays absorb water from seas/rivers → Water vapour rises → Higher it goes, colder it becomes → Condensed into clouds → Becomes too heavy → Falls on earth as rain.</p>
+      <div class="example-box">
+        <div class="example-label">✅ Written Paragraph Answer</div>
+        <p><strong>Water Cycle</strong></p>
+        <p>It is common knowledge that the sunrays absorb water from the surface of the Earth — namely seas, streams, rivers and other such water bodies. This gets converted into water vapor and thus rises. As it goes higher, it becomes cooler and begins to move. Various particles of vapor collect together and condense to form clouds which, when they become too heavy, are difficult to sustain. The condensed vapour in these clouds then comes down in the form of rains and fills the various water bodies from where once again it evaporates with the heat of the Sun and thus, the cycle of water is maintained.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u3">EXAMPLE 2 — FLOWCHART → PARAGRAPH</div>
+    <div class="card-title">Journey of a Manuscript (from your PDF)</div>
+    <div class="card-body">
+      <p><strong>Flowchart shows:</strong> Manuscripts collected from students &amp; teachers → Screened &amp; edited → Rough draft prepared → Sent to printer with dummy → Proof correction → Final printing.</p>
+      <div class="example-box">
+        <div class="example-label">✅ Written Paragraph Answer</div>
+        <p><strong>The Journey of a Manuscript</strong></p>
+        <p>From the given flowchart, it is very evident that the information pertains to the journey of a manuscript from its initial stage to the final printing of a book or a magazine. Manuscripts are collected from both students and teachers. They are thoroughly screened and edited, where necessary additions, alterations and omissions are made to the copy. A rough draft is then prepared after which the manuscript is sent to the printer along with a dummy. Then comes the stage of proof correction. After the corrections are made and the manuscript is proofread, it is sent for final printing.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u3">EXAMPLE 3 — TREE DIAGRAM → PARAGRAPH</div>
+    <div class="card-title">Reasons for Reading (from your PDF)</div>
+    <div class="card-body">
+      <p><strong>Tree Diagram shows:</strong> Reasons for Reading → Reading for Pleasure → Time Pass / Information &amp; Knowledge / Learning / Enjoyment</p>
+      <div class="example-box">
+        <div class="example-label">✅ Written Paragraph Answer</div>
+        <p>There are many reasons why people read. The primary reason for reading is pleasure. Reading for pleasure can be further classified into four categories. First, some people read simply to pass time. Second, people read to gain information and knowledge about the world around them. Third, reading is an excellent way of learning new things. Finally, reading is also a source of enjoyment and entertainment. Thus, reading serves many valuable purposes in our lives.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 5. Advantages of Graphical Representation -->
+  <div class="section-title u3"><span class="dot"></span>5. Advantages of Graphical Representation</div>
+  <div class="section-sub">Why diagrams are better than plain text</div>
+
+  <div class="card">
+    <div class="card-body">
+      <ul class="styled">
+        <li>Quick viewing of a <strong>large amount of data at one glance</strong>.</li>
+        <li>More <strong>accuracy</strong> of data is possible through graphs.</li>
+        <li><strong>Comparison, contrast and division</strong> can be done in one go.</li>
+        <li>More <strong>effective than written text</strong> for complex data.</li>
+        <li>Stimulates <strong>quick analytical approach</strong> to huge text.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 6. Visual Aids -->
+  <div class="section-title u3"><span class="dot"></span>6. Visual Aids</div>
+  <div class="section-sub">What they are, types, why we use them, how to use them</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u3">DEFINITION</div>
+    <div class="card-title">What is a Visual Aid?</div>
+    <div class="card-body">
+      <p>A visual aid is an <span class="hl">object or representation that is used to clarify or enhance understanding</span> of a concept or process. It helps present information in different formats for different types of learners.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Goals of Visual Aids (What they accomplish)</div>
+    <div class="card-body">
+      <ul class="styled">
+        <li>Make your speech more <strong>interesting</strong>.</li>
+        <li>Enhance your <strong>credibility</strong> as a speaker.</li>
+        <li>Serve as <strong>guides to transitions</strong>, helping the audience stay on track.</li>
+        <li>Communicate <strong>complex information in a short period of time</strong>.</li>
+        <li><strong>Reinforce</strong> your verbal message.</li>
+        <li>Help the audience <strong>use and retain</strong> the information.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Types of Visual Aids</div>
+    <div class="card-body">
+      <ul class="styled">
+        <li><strong>Objects</strong> – photographs, drawings, diagrams, schematics.</li>
+        <li><strong>Numbers</strong> – tables, bar charts, pie charts, line graphs (for statistics).</li>
+        <li><strong>Words</strong> – key definitions and examples shown in boxes.</li>
+        <li><strong>Posters</strong></li>
+        <li><strong>Slide Shows / Presentation Software (PowerPoint)</strong></li>
+        <li><strong>Models</strong></li>
+        <li><strong>Videos</strong></li>
+        <li><strong>Transparencies</strong></li>
+        <li><strong>Handouts</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Why Visual Communication is Important (7 Reasons)</div>
+    <div class="card-body">
+      <ol class="styled">
+        <li><strong>It saves time</strong> – The brain processes images 60,000 times faster than text.</li>
+        <li><strong>It is clear</strong> – Images improve the clarity of information.</li>
+        <li><strong>Consistency</strong> – Same colors/logos make brand identity strong.</li>
+        <li><strong>Better retention</strong> – People retain over 50% of visuals vs 10-20% of text.</li>
+        <li><strong>It is simple</strong> – Even illiterate people can understand images.</li>
+        <li><strong>It is flexible</strong> – Images are understood across different cultures and languages.</li>
+        <li><strong>It is effective &amp; popular</strong> – People love images, GIFs, videos more than plain words.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Guidelines to Use Visual Aids Effectively</div>
+    <div class="card-body">
+      <p>Illustrations should be:</p>
+      <ul class="styled">
+        <li><strong>Neat, accurate, and self-contained.</strong></li>
+        <li><strong>Appropriate</strong> to the data being shown.</li>
+        <li><strong>Labelled completely</strong> with titles and keys.</li>
+        <li><strong>Integrated with the text</strong> — placed near the reference in the document.</li>
+        <li><strong>Sized appropriately</strong> — clear even when reproduced.</li>
+      </ul>
+      <p style="margin-top:10px;">General Do's and Don'ts:</p>
+      <ul class="styled">
+        <li>✅ DO make a <strong>clear connection</strong> between your words and the visual aid.</li>
+        <li>✅ DO <strong>speak to your audience</strong>, not to the visual aid itself.</li>
+        <li>❌ DON'T distract the audience by <strong>blocking their view</strong> or adjusting the visual repeatedly.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">PowerPoint Tips (from your PDF)</div>
+    <div class="card-body">
+      <ul class="styled">
+        <li>Maximum <strong>8 lines of text per slide</strong>.</li>
+        <li>Leave the <strong>bottom third of the page empty</strong>.</li>
+        <li>Use <strong>no more than 3 colors per page</strong>.</li>
+        <li>Use <strong>dark colors for words</strong>, bright colors only for accents.</li>
+        <li>Use <strong>16:9 format</strong> (not the old 4:3).</li>
+        <li>Use a <strong>dark background</strong> on slides — easier to read, better for cameras.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 7. Presentation Skills -->
+  <div class="section-title u3"><span class="dot"></span>7. Presentation Skills – Do's &amp; Don'ts</div>
+  <div class="section-sub">Important for exam — know at least 5 from each side</div>
+
+  <div class="grid2">
+    <div class="mini-card">
+      <div class="mini-card-title" style="color:#43e97b;">✅ DO's</div>
+      <ul class="styled" style="font-size:13.5px;">
+        <li>Think carefully about <strong>what the audience wants to hear</strong>.</li>
+        <li>Use <strong>storytelling and passion</strong>.</li>
+        <li>Maintain <strong>eye contact</strong> with the audience.</li>
+        <li><strong>Slow down</strong> — speak slower than usual and add pauses.</li>
+        <li><strong>Engage</strong> the audience every 10 minutes.</li>
+        <li>Use <strong>pictures and videos</strong> — less text, more visuals.</li>
+        <li>Design slides with <strong>big text visible from the back</strong>.</li>
+        <li>Focus on <strong>2 or 3 key things</strong> only.</li>
+        <li>Build presentation on <strong>drama formula</strong>: Setup → Problem → Confrontation → Resolution.</li>
+        <li>End with a <strong>key question or action point</strong>.</li>
+        <li>Use <strong>spell checker</strong> on all slides.</li>
+        <li>Avoid monotony — use <strong>variation in slide styles</strong>.</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <div class="mini-card-title" style="color:#ff6584;">❌ DON'Ts</div>
+      <ul class="styled" style="font-size:13.5px;">
+        <li>Don't <strong>read word by word from a script</strong>.</li>
+        <li>Don't <strong>read out loud from bullet points</strong> on slides.</li>
+        <li>Don't use <strong>complete sentences</strong> in slides.</li>
+        <li>Don't <strong>speak too fast</strong> or cram too much.</li>
+        <li>Don't <strong>start talking immediately</strong> — let the audience read the slide first.</li>
+        <li>Don't use <strong>hard-to-read fonts or garish backgrounds</strong>.</li>
+        <li>Don't use <strong>irrelevant photos</strong> that distract.</li>
+        <li>Don't use <strong>distracting effects</strong> (tumbling text, weird transitions).</li>
+        <li>Don't use <strong>acronyms without explaining</strong> them.</li>
+        <li>Don't <strong>stand in the projector beam</strong>.</li>
+        <li>Don't <strong>hide behind the computer</strong> or speaker stand.</li>
+        <li>Don't end by simply <strong>summarizing</strong> — show passion instead.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 8. Data Interpretation -->
+  <div class="section-title u3"><span class="dot"></span>8. Data Interpretation</div>
+  <div class="section-sub">Understanding and explaining data from charts/tables</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u3">CONCEPT</div>
+    <div class="card-title">What is Data Interpretation?</div>
+    <div class="card-body">
+      <p>Data interpretation means <span class="hl">reading, understanding, and explaining the meaning of data</span> given in a chart, table, graph, or diagram. You analyze the numbers or information and write what it means in simple language.</p>
+      <p>When interpreting data:</p>
+      <ul class="styled">
+        <li>Read the title of the table/chart first.</li>
+        <li>Identify the highest, lowest, and average values.</li>
+        <li>Note trends (increasing, decreasing, stable).</li>
+        <li>State comparisons clearly.</li>
+        <li>Draw conclusions from the data.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip-box"><strong>📝 Exam Tip:</strong> When writing verbal information from a graph or table, always start with "The given [table/chart/diagram] shows..." and use words like: significantly, gradually, sharply, steadily, drastically, marginally to describe changes.</div>
+
+</div><!-- end u3 pane -->
+
+
+<!-- ═══════════════════════════════════════════════════ UNIT 4 ═══ -->
+<div id="u4" class="pane">
+
+  <div class="section-title u4"><span class="dot"></span>Unit 4 — Report Writing Overview</div>
+  <div class="section-sub">All types of formal reports with full format and examples</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">DEFINITION</div>
+    <div class="card-title">What is a Formal Business Report?</div>
+    <div class="card-body">
+      <p>A formal business report is an <span class="hl">official document that contains data, research, information and other necessary details</span> to help decision makers form plans and objectives to help the company.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Types of Formal Reports (Know all 8)</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Type</th><th>Purpose</th><th>Example</th></tr>
+        <tr><td><strong>Justification/Recommendation</strong></td><td>Proposes an idea to management</td><td>Proposing to buy a new machine</td></tr>
+        <tr><td><strong>Investigative</strong></td><td>Presents potential risks of an opportunity</td><td>Analyzing a proposed merger</td></tr>
+        <tr><td><strong>Compliance</strong></td><td>Shows organization follows regulations</td><td>Accountant's compliance report</td></tr>
+        <tr><td><strong>Feasibility</strong></td><td>Analyzes if a proposed idea is practical</td><td>Opening a coffee shop or hospital</td></tr>
+        <tr><td><strong>Research Studies</strong></td><td>Analyzes a problem and gives recommendations</td><td>Study on employee turnover</td></tr>
+        <tr><td><strong>Periodic</strong></td><td>Regular reports on products/services/processes</td><td>Monthly sales report</td></tr>
+        <tr><td><strong>Situational</strong></td><td>Discusses a specific topic or event</td><td>Report on a conference</td></tr>
+        <tr><td><strong>Yardstick</strong></td><td>Presents several solutions to a situation</td><td>Comparing 3 vendors for a project</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">General Format / Steps to Write a Formal Report</div>
+    <div class="card-body">
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Plan before you write</div><div class="step-desc">Decide what you want to achieve. Treat it like a project.</div></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Check for in-house format</div><div class="step-desc">See if your organization has an established format to follow.</div></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Add a Title</div><div class="step-desc">Clear title + your name + date at the beginning.</div></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Write Table of Contents</div><div class="step-desc">Written LAST but placed at the BEGINNING. All section headings + page numbers.</div></div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Add Summary / Abstract</div><div class="step-desc">Also written last. Summarizes main points, findings, conclusions.</div></div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-content"><div class="step-title">Write Introduction</div><div class="step-desc">Purpose of the report + background information.</div></div></div>
+        <div class="step"><div class="step-num">7</div><div class="step-content"><div class="step-title">Outline Methodology</div><div class="step-desc">How you collected data (qualitative/quantitative methods).</div></div></div>
+        <div class="step"><div class="step-num">8</div><div class="step-content"><div class="step-title">Present Findings</div><div class="step-desc">Present research results logically using headings, bullet points, tables, graphs.</div></div></div>
+        <div class="step"><div class="step-num">9</div><div class="step-content"><div class="step-title">Conclusion &amp; Recommendations</div><div class="step-desc">Your assessment + measurable action points.</div></div></div>
+        <div class="step"><div class="step-num">10</div><div class="step-content"><div class="step-title">Bibliography &amp; Appendices</div><div class="step-desc">All sources in alphabetical order. Supporting material goes in appendices.</div></div></div>
+        <div class="step"><div class="step-num">11</div><div class="step-content"><div class="step-title">Proofread</div><div class="step-desc">Check grammar, spelling, flow. Avoid complex words and slang.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Project Report -->
+  <div class="section-title u4"><span class="dot"></span>1. Project Report</div>
+  <div class="section-sub">Comprehensive document about a proposed or ongoing project</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">DEFINITION</div>
+    <div class="card-title">What is a Project Report?</div>
+    <div class="card-body">
+      <p>A project report is a <span class="hl">written document that provides details on the overall picture of a proposed business or project</span>. It contains data on economic, technical, financial, managerial and production aspects. It helps an entrepreneur obtain loans from banks or financial institutions.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Contents / Format of a Project Report</div>
+    <div class="card-body">
+      <div class="format-box">1. TITLE PAGE
+   - Title of the project
+   - Submitted by (Name, Roll No., Course, Department, Institution)
+   - Guide name, Submission Date
+
+2. ABSTRACT / EXECUTIVE SUMMARY
+   - Brief overview of what the project is about and its goals.
+
+3. INTRODUCTION
+   - Background of the topic
+   - Why this project is needed
+
+4. OBJECTIVES
+   - Clear list of what the project aims to achieve
+
+5. LITERATURE REVIEW
+   - What existing solutions/systems exist
+   - How this project improves on them
+
+6. METHODOLOGY / SYSTEM DESIGN
+   - How the project was built / the approach used
+   - Technologies, tools, materials used
+
+7. IMPLEMENTATION
+   - Modules / features developed
+   - Step-by-step how it was done
+
+8. RESULTS
+   - What the project achieved
+
+9. ADVANTAGES
+   - Benefits of the project
+
+10. LIMITATIONS
+    - What the project cannot do (yet)
+
+11. FUTURE SCOPE
+    - What can be added or improved later
+
+12. CONCLUSION
+    - Summary of what was achieved
+
+13. REFERENCES
+    - Books, journals, websites used
+
+14. APPENDICES
+    - Screenshots, code snippets, user manual</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">FULL EXAMPLE</div>
+    <div class="card-title">Student Project Report – Student Management System</div>
+    <div class="card-body">
+      <div class="example-box">
+        <div class="example-label">Example from your PDF</div>
+        <p><strong>Title:</strong> Student Management System | <strong>Course:</strong> B.Tech (CSE) | <strong>Date:</strong> April 2026</p>
+        <p><strong>Abstract:</strong> This project focuses on developing a web-based Student Management System to store, update, and retrieve student information, track attendance, and generate performance reports. The project aims to reduce manual work and improve data accuracy.</p>
+        <p><strong>Objectives:</strong> To design a user-friendly system; automate attendance; ensure secure storage; reduce paperwork.</p>
+        <p><strong>Methodology:</strong> SDLC – Requirement Analysis → Design → Implementation → Testing → Deployment</p>
+        <p><strong>Tech:</strong> Frontend: HTML, CSS, JS | Backend: Python (Django) | Database: MySQL</p>
+        <p><strong>Modules:</strong> User authentication, Student records, Attendance tracking, Report generation</p>
+        <p><strong>Results:</strong> System successfully manages data, reduces manual effort, improves accuracy.</p>
+        <p><strong>Future Scope:</strong> Mobile app, cloud deployment, advanced analytics.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Feasibility Report -->
+  <div class="section-title u4"><span class="dot"></span>2. Feasibility Report</div>
+  <div class="section-sub">Evaluates whether a project is practical and worth pursuing</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">DEFINITION</div>
+    <div class="card-title">What is a Feasibility Report?</div>
+    <div class="card-body">
+      <p>A feasibility report <span class="hl">evaluates whether a proposed idea, project, or business is practical and worth pursuing</span>. It analyzes market demand, financial requirements, operational needs, and potential risks.</p>
+      <p><strong>Difference from Project Report:</strong> A feasibility report is prepared BEFORE starting a project to check if it's viable. A project report is the full plan AFTER deciding to go ahead.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Format of a Feasibility Report</div>
+    <div class="card-body">
+      <div class="format-box">1. EXECUTIVE SUMMARY
+   - Brief overview of the proposed project, key findings, and recommendation.
+
+2. DESCRIPTION OF THE PROJECT
+   - What the project is, what it will offer, who the target customers are.
+
+3. MARKET FEASIBILITY
+   - Target market, demand analysis, competition, market opportunity.
+
+4. TECHNICAL FEASIBILITY
+   - Location, infrastructure, equipment, human resources needed.
+
+5. FINANCIAL FEASIBILITY
+   - Estimated startup cost, monthly expenses, expected revenue,
+     break-even point, funding options.
+
+6. LEGAL AND REGULATORY FEASIBILITY
+   - Required licenses, permits, regulations to follow.
+
+7. SOCIAL AND ENVIRONMENTAL IMPACT (for large projects)
+   - Benefits to society, environmental concerns.
+
+8. RISK ANALYSIS
+   - Potential risks and mitigation strategies.
+
+9. CONCLUSION AND RECOMMENDATION
+   - Is the project feasible? Should it be pursued?</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">FULL EXAMPLE 1</div>
+    <div class="card-title">Feasibility Report – Opening a Small Coffee Shop</div>
+    <div class="card-body">
+      <div class="example-box">
+        <div class="example-label">Example from your PDF</div>
+        <p><strong>1. Executive Summary:</strong> This report evaluates opening a small coffee shop downtown. Based on findings, the project appears viable with moderate investment and strong local demand.</p>
+        <p><strong>2. Description:</strong> A cozy coffee shop offering beverages, snacks, and free Wi-Fi. Target: students, office workers, tourists.</p>
+        <p><strong>3. Market Feasibility:</strong> High foot traffic, 2-3 existing competitors, room for differentiation via specialty drinks. → Positive.</p>
+        <p><strong>4. Technical Feasibility:</strong> Available rental space, coffee machines, 3-5 staff needed. → Easy to implement.</p>
+        <p><strong>5. Financial Feasibility:</strong> Startup cost: $25,000–$40,000. Monthly expenses: rent, salaries, utilities. Revenue: $3,000–$5,000/month. Break-even: 12–18 months. → Feasible.</p>
+        <p><strong>6. Legal:</strong> Business registration, food safety permits. No major barriers.</p>
+        <p><strong>7. Risk Analysis:</strong> Competition, fluctuating demand. Mitigation: Unique branding, cost control.</p>
+        <p><strong>8. Conclusion:</strong> Opening a coffee shop is feasible and recommended with proper marketing and cost management.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">FULL EXAMPLE 2</div>
+    <div class="card-title">Feasibility Report – Opening a Hospital in a New Area</div>
+    <div class="card-body">
+      <div class="example-box">
+        <div class="example-label">Example from your PDF</div>
+        <p><strong>1. Executive Summary:</strong> Evaluates a 50–100 bed multi-specialty hospital in a developing suburban area. Viable if sufficient capital, staff, and regulatory approvals are secured.</p>
+        <p><strong>2. Description:</strong> Services: general medicine, emergency care, maternity, pediatrics, diagnostics, minor surgeries.</p>
+        <p><strong>3. Market Feasibility:</strong> Growing population, few clinics, no large hospital within 10–15 km. Strong demand for emergency care. → Strong potential.</p>
+        <p><strong>4. Technical Feasibility:</strong> Needs 1–2 acres land, patient wards, OT, ICU, diagnostic labs, ambulance. → Feasible but needs significant planning.</p>
+        <p><strong>5. Financial Feasibility:</strong> Investment: ₹15–₹50 crore. Break-even: 3–7 years. Revenue from patient services, surgeries, pharmacy. → High investment, profitable long-term.</p>
+        <p><strong>6. Legal:</strong> Hospital registration, fire safety, biomedical waste compliance. Optional: NABH certification.</p>
+        <p><strong>7. Social Impact:</strong> Improves healthcare access, creates employment, enhances community wellbeing.</p>
+        <p><strong>8. Risk Analysis:</strong> High investment, staff recruitment difficulty, regulatory delays. Mitigation: Expert partners, specialized services.</p>
+        <p><strong>9. Conclusion:</strong> Feasible if there is demonstrated demand, sufficient funding, and proper planning.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Progress Report -->
+  <div class="section-title u4"><span class="dot"></span>3. Progress Report</div>
+  <div class="section-sub">Shows the current status of an ongoing project</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">DEFINITION</div>
+    <div class="card-title">What is a Progress Report?</div>
+    <div class="card-body">
+      <p>A progress report is a document that <span class="hl">details the status of a project</span>, outlining completed tasks, work in progress, and upcoming milestones. It ensures transparency and accountability.</p>
+      <p>Also called: Status update, Project update, Status report, Milestones report.</p>
+      <p><strong>Purpose:</strong> Answers 3 basic questions:</p>
+      <ul class="styled">
+        <li><span class="hl">1) What have you done?</span></li>
+        <li><span class="hl">2) What are you going to do next?</span></li>
+        <li><span class="hl">3) How are you doing?</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Format of a Progress Report</div>
+    <div class="card-body">
+      <div class="format-box">1. TITLE
+   - Progress Report on [Project Name]
+
+2. INTRODUCTION
+   - What project is being reported, time period covered.
+
+3. PROJECT OVERVIEW
+   - Project Name, Location/Type, Start Date, Expected Completion Date.
+
+4. OBJECTIVES (what the project aims to achieve)
+
+5. WORK COMPLETED (What has been done so far)
+
+6. WORK IN PROGRESS (What is currently being worked on)
+
+7. TOOLS AND TECHNOLOGIES USED (for software projects)
+
+8. TIMELINE STATUS
+   - Is the project on schedule / ahead / behind?
+
+9. CHALLENGES FACED
+
+10. ACTIONS TAKEN (to address challenges)
+
+11. FUTURE PLAN (Work Planned for Next Period)
+
+12. CONCLUSION</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">FULL EXAMPLE 1</div>
+    <div class="card-title">Progress Report – Construction Project (Green Valley Apartments)</div>
+    <div class="card-body">
+      <div class="example-box">
+        <div class="example-label">Example from your PDF</div>
+        <p><strong>Project:</strong> Green Valley Apartments | <strong>Period:</strong> January–March 2026</p>
+        <p><strong>Work Completed:</strong> Site clearing, foundation work, ground floor structure, procurement of materials.</p>
+        <p><strong>Work in Progress:</strong> First-floor construction, electrical and plumbing planning.</p>
+        <p><strong>Timeline:</strong> On schedule. Minor delays due to weather, managed effectively.</p>
+        <p><strong>Challenges:</strong> Unexpected rainfall, shortage of skilled labor, delay in material delivery.</p>
+        <p><strong>Actions Taken:</strong> Adjusted schedule, hired additional labor, coordinated with suppliers.</p>
+        <p><strong>Future Plan:</strong> Complete first floor, begin electrical/plumbing, procure materials for upper floors.</p>
+        <p><strong>Conclusion:</strong> Project is progressing steadily and remains on track.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">FULL EXAMPLE 2</div>
+    <div class="card-title">Progress Report – Website Development (Rahul Kumar)</div>
+    <div class="card-body">
+      <div class="example-box">
+        <div class="example-label">Example from your PDF</div>
+        <p><strong>Prepared By:</strong> Rahul Kumar | <strong>Date:</strong> May 1, 2026 | <strong>Reporting Period:</strong> April 1–30, 2026</p>
+        <p><strong>Project Goal:</strong> Design a responsive company website that improves user experience.</p>
+        <p><strong>Work Completed:</strong> Finalized layout, developed homepage &amp; about page, integrated navigation, set up hosting and domain.</p>
+        <p><strong>Work in Progress:</strong> Service pages, content writing, testing responsiveness.</p>
+        <p><strong>Work Planned:</strong> Remaining pages, contact forms, backend, SEO optimization.</p>
+        <p><strong>Challenges:</strong> Delays in content from stakeholders, hosting setup issues.</p>
+        <p><strong>Overall Status: 60% complete, progressing on schedule.</strong></p>
+        <p><strong>Conclusion:</strong> Expected to meet planned deadline.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Evaluation Report -->
+  <div class="section-title u4"><span class="dot"></span>4. Evaluation Report</div>
+  <div class="section-sub">Assesses the effectiveness, strengths and weaknesses of a project or program</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">DEFINITION</div>
+    <div class="card-title">What is an Evaluation Report?</div>
+    <div class="card-body">
+      <p>An evaluation report is a <span class="hl">formal document that assesses the strengths, weaknesses, effectiveness, and value of a project, product, process, or employee</span> based on specific, evidence-based criteria. It guides decision-makers and offers recommendations.</p>
+      <p><strong>Used for:</strong> Program evaluation, Performance appraisal, Procurement/Vendor review, Product testing, Educational assessment.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Format of an Evaluation Report</div>
+    <div class="card-body">
+      <div class="format-box">1. EXECUTIVE SUMMARY
+   - Short version: purpose, methodology, key findings, conclusions, recommendations.
+
+2. INTRODUCTION TO THE PROJECT
+   - Background, objectives, planned outcomes, stakeholders.
+
+3. PURPOSE OF THE EVALUATION
+   - Why this evaluation is needed, how it will benefit the program.
+
+4. OBJECTIVES OF THE EVALUATION
+   - Assess relevance, effectiveness, efficiency, impact, sustainability.
+   - Challenges faced, lessons learned.
+
+5. METHODOLOGY
+   - How data was collected: surveys, interviews, observations, assessments.
+   - Sampling techniques, analysis methods.
+
+6. EVALUATION FINDINGS
+   a. Relevance – Are activities relevant to goals?
+   b. Effectiveness – Were objectives achieved?
+   c. Efficiency – Were resources used well?
+   d. Impact – What difference did it make?
+   e. Sustainability – Will benefits continue after project ends?
+
+7. STRENGTHS OF THE PROJECT
+
+8. AREAS FOR IMPROVEMENT / WEAKNESSES
+
+9. CONCLUSIONS
+
+10. RECOMMENDATIONS
+
+11. ANNEXES / APPENDICES</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">FULL EXAMPLE 1</div>
+    <div class="card-title">Evaluation Report – Employee Training Program</div>
+    <div class="card-body">
+      <div class="example-box">
+        <div class="example-label">Example from your PDF</div>
+        <p><strong>Program:</strong> 2-week training (Jan 5–18, 2026) to improve technical skills and productivity.</p>
+        <p><strong>Methodology:</strong> Pre/post assessments, feedback surveys, observation, supervisor reviews.</p>
+        <p><strong>Findings:</strong> 30–40% improvement in test scores. High engagement. Effective trainers. Improved daily task efficiency.</p>
+        <p><strong>Strengths:</strong> Well-structured modules, experienced trainers, interactive methods, practical content.</p>
+        <p><strong>Weaknesses:</strong> Limited hands-on practice, some sessions too theoretical, scheduling conflicts.</p>
+        <p><strong>Recommendations:</strong> More practical sessions, extend duration, add follow-up sessions, improve scheduling.</p>
+        <p><strong>Conclusion:</strong> Program was effective. Minor improvements can deliver even better results.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">FULL EXAMPLE 2</div>
+    <div class="card-title">Employee Performance Evaluation Report – Jane Smith</div>
+    <div class="card-body">
+      <div class="example-box">
+        <div class="example-label">Example from your PDF</div>
+        <p><strong>Employee:</strong> Jane Smith | <strong>Position:</strong> Marketing Coordinator | <strong>Period:</strong> Jan–Dec 2025</p>
+        <p><strong>Criteria:</strong> Job knowledge, quality of work, communication, teamwork, initiative, time management.</p>
+        <p><strong>Performance:</strong> Strong marketing knowledge; consistent quality work; clear communication; cooperative team member; takes initiative; meets deadlines.</p>
+        <p><strong>Key Achievements:</strong> Led social media campaign (30% engagement increase), launched 2 major projects, improved reporting efficiency.</p>
+        <p><strong>Areas for Improvement:</strong> Leadership skills, data analytics expertise, delegation skills.</p>
+        <p><strong>Rating: 4/5 – Very Good</strong></p>
+        <p><strong>Recommendations:</strong> Advanced analytics training, team leadership role, continue mentoring.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">FULL EXAMPLE 3</div>
+    <div class="card-title">Report on Technical Fest – INNOVATE 2026</div>
+    <div class="card-body">
+      <div class="example-box">
+        <div class="example-label">Event Report Example from your PDF</div>
+        <p><strong>Event:</strong> INNOVATE 2026 | <strong>Date:</strong> March 15–16, 2026 | <strong>Organized by:</strong> Department of Engineering</p>
+        <p><strong>Objectives:</strong> Promote technical knowledge, platform for skills, encourage teamwork, interact with industry.</p>
+        <p><strong>Events:</strong> Coding Competition, Project Expo, Robotics Challenge, Technical Quiz, AI &amp; IoT Workshops.</p>
+        <p><strong>Participation:</strong> 300+ students from various colleges; faculty and industry experts as judges.</p>
+        <p><strong>Highlights:</strong> Innovative projects, interactive workshops, high enthusiasm, networking opportunities.</p>
+        <p><strong>Prizes:</strong> Certificates, trophies, cash prizes. Special recognition for best innovative project.</p>
+        <p><strong>Challenges:</strong> Time management, technical issues with equipment, crowd management.</p>
+        <p><strong>Conclusion:</strong> Grand success. Valuable learning experience. Strengthened collaboration.</p>
+        <p><strong>Recommendations:</strong> Improve scheduling, increase workshops, better technical infrastructure.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Proposal Writing -->
+  <div class="section-title u4"><span class="dot"></span>5. Business Proposal Writing</div>
+  <div class="section-sub">Documents sent to clients to obtain a job or approval</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u4">DEFINITION</div>
+    <div class="card-title">What is a Business Proposal?</div>
+    <div class="card-body">
+      <p>A business proposal is a <span class="hl">written document sent to a prospective client in order to obtain a specific job</span>. It is systematic, factual, and persuasive — it offers a solution to a problem in response to a need.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Types of Proposals</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Type</th><th>Explanation</th><th>Example</th></tr>
+        <tr><td><strong>Internal</strong></td><td>Written to someone within your organization</td><td>Chairman asks personnel manager to develop a training program</td></tr>
+        <tr><td><strong>External</strong></td><td>Written from one organization to another</td><td>Independent consultant proposes a project to another firm</td></tr>
+        <tr><td><strong>Solicited</strong></td><td>Client REQUESTED the proposal (responded to an RFP)</td><td>Responding to a published Request for Proposal</td></tr>
+        <tr><td><strong>Unsolicited</strong></td><td>Client did NOT request — you send it anyway to convince them</td><td>Submitting a book outline to a publisher</td></tr>
+      </table>
+      <p style="margin-top:8px;font-size:13px;color:var(--muted);">RFP = Request for Proposal | RFQ = Request for Quotation</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Format / Structure of a Business Proposal</div>
+    <div class="card-body">
+      <div class="format-box">COVER LETTER (Transmittal Document)
+- Brief essence of proposal, bidder's qualifications, price, request for order.
+
+PROPOSAL DOCUMENT:
+1. Title Page
+   - Your name/company, client's name/company, date of submission.
+
+2. Table of Contents (for complex proposals)
+
+3. Executive Summary
+   - Brief overview of the proposal.
+
+4. Statement of the Problem / Issue / Job
+   - Restate the client's objectives to show you understand the issue.
+
+5. Approach
+   - Summary of HOW you will solve the client's problem.
+   - This is KEY to winning the job.
+
+6. Methodology
+   - Detailed steps of how the Approach will be carried out.
+
+7. Bidder's Qualifications
+   - Why YOU should be chosen (experience, past work, credentials).
+
+8. Schedule and Benchmarks
+   - Timeline showing major tasks and milestones.
+
+9. Cost Proposal, Payment Schedules, Legal Matters
+   - Full price breakdown, when payments are expected.
+
+APPENDICES (if needed)
+- Charts, graphs, photographs, maps.</div>
+    </div>
+  </div>
+
+  <div class="tip-box"><strong>📝 Remember:</strong> Proposals must be distinguished from estimates. An <strong>estimate</strong> just gives a price quote. A <strong>proposal</strong> also explains your approach, methodology, qualifications, and schedule. Proposals are ALWAYS first and foremost <strong>sales documents</strong>.</div>
+
+</div><!-- end u4 pane -->
+
+
+<!-- ═══════════════════════════════════════════════════ UNIT 5 ═══ -->
+<div id="u5" class="pane">
+
+  <div class="section-title u5"><span class="dot"></span>Unit 5 — Manual Writing</div>
+  <div class="section-sub">Types of manuals, user manual, product manual, operations manual</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u5">DEFINITION</div>
+    <div class="card-title">What is a Manual?</div>
+    <div class="card-body">
+      <p>A manual is a <span class="hl">written document that provides instructions, guidance, and information</span> on how to use, operate, or maintain a product, system, or organization. It helps people perform tasks correctly, safely, and efficiently.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Types of Manuals -->
+  <div class="section-title u5"><span class="dot"></span>1. Types of Manuals</div>
+  <div class="section-sub">Know all the different names and types</div>
+
+  <div class="card">
+    <div class="card-title">Complete List of Manual Types</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Type</th><th>What it does</th></tr>
+        <tr><td><strong>User Manual / User Guide</strong></td><td>Tells users how to use a product correctly and safely.</td></tr>
+        <tr><td><strong>Product Manual</strong></td><td>Specific manual for a product — covers features, installation, use, troubleshooting.</td></tr>
+        <tr><td><strong>Operations Manual</strong></td><td>Tells employees how the entire organization/business works and how to do their jobs.</td></tr>
+        <tr><td><strong>Technical Documentation</strong></td><td>Detailed technical information for developers or engineers.</td></tr>
+        <tr><td><strong>Instruction Manual</strong></td><td>Step-by-step instructions for using/installing something (comes with products).</td></tr>
+        <tr><td><strong>Training Manual</strong></td><td>Used to train employees or new users on a system/process.</td></tr>
+        <tr><td><strong>Quick Start Guide</strong></td><td>Short, simplified guide to get started quickly.</td></tr>
+        <tr><td><strong>Installation Manual</strong></td><td>Instructions specifically for installing a product or software.</td></tr>
+        <tr><td><strong>Maintenance Manual</strong></td><td>Instructions for maintaining, servicing, and repairing a product.</td></tr>
+        <tr><td><strong>Software Manual</strong></td><td>Manual specific to a software application or program.</td></tr>
+        <tr><td><strong>Procedure Manual</strong></td><td>Documents standard operating procedures (SOPs) for a workplace.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- User Manual -->
+  <div class="section-title u5"><span class="dot"></span>2. User Manual</div>
+  <div class="section-sub">The most commonly tested manual type — know everything about it</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u5">DEFINITION</div>
+    <div class="card-title">What is a User Manual?</div>
+    <div class="card-body">
+      <p>A user manual is a <span class="hl">technical communication document intended to give assistance to people on how to use a product</span>. A good user manual helps users use a product <strong>safely, healthily, and effectively</strong>.</p>
+      <p>A user manual consists of <strong>textual and visual information</strong> (illustrations, screenshots, tables) to help the user complete specific tasks.</p>
+      <p>The <strong>user plays the central role</strong> when drawing up a user manual — a well-drafted user manual only provides information that is relevant for the intended user.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">What Information Should a User Manual Include?</div>
+    <div class="card-body">
+      <div class="grid2">
+        <div>
+          <ul class="styled">
+            <li>Product name &amp; model/type number</li>
+            <li>Intended use</li>
+            <li>Features / accessories</li>
+            <li>Description of main product elements</li>
+            <li>Description of user interface</li>
+            <li>Safety warnings</li>
+            <li>Installation instructions</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="styled">
+            <li>How to use/operate the product</li>
+            <li>Troubleshooting section</li>
+            <li>Maintenance information</li>
+            <li>Technical specifications</li>
+            <li>Table of Contents &amp; Index</li>
+            <li>Glossary</li>
+            <li>Warranty information &amp; Contact details</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Format / Template of a User Manual</div>
+    <div class="card-body">
+      <div class="format-box">Table of Contents
+1. Introduction
+   1.1 Scope / Purpose
+   1.2 Procedure Overview
+
+2. Process 1 (Workflow)
+   2.1 Sub-process 1
+       - Detailed Instructions
+       - Samples / Examples
+   2.2 Sub-process 2
+       - Detailed Instructions
+       - Samples / Examples
+
+3. Process 2 (Workflow)
+   3.1 Sub-process 1
+       - Detailed Instructions
+   3.2 Sub-process 2
+       - Detailed Instructions
+
+4. Appendices
+   - Additional reference material
+
+5. Indexes</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">12 Steps to Write a Great User Manual</div>
+    <div class="card-body">
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Define Your Audience</div><div class="step-desc">Know the reader's experience level. Optimize instructions to match their expertise.</div></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Describe the Problem</div><div class="step-desc">Explain the problem, present the solution, then outline instructions to reach the solution.</div></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Break it Down</div><div class="step-desc">If the problem is complex, break it into smaller parts with specific instructions for each.</div></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Be Descriptive</div><div class="step-desc">Avoid vague words like "thing" or "stuff." Identify every part by its correct name.</div></div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Stick to the Topic</div><div class="step-desc">Don't add irrelevant anecdotes or background stories.</div></div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-content"><div class="step-title">Take Good Photos</div><div class="step-desc">Photos draw people to the manual. Even a smartphone works for instructional photos.</div></div></div>
+        <div class="step"><div class="step-num">7</div><div class="step-content"><div class="step-title">Don't Use Passive Voice</div><div class="step-desc">Be direct. Use verbs. Not "It is connected" but "Connect the cable."</div></div></div>
+        <div class="step"><div class="step-num">8</div><div class="step-content"><div class="step-title">Avoid First Person ("I")</div><div class="step-desc">Use authoritative, instructional tone. Not "I did this" but "Do this."</div></div></div>
+        <div class="step"><div class="step-num">9</div><div class="step-content"><div class="step-title">Use a Template</div><div class="step-desc">Standardize your manual — consistent bullet styles, image sizes, text orientation.</div></div></div>
+        <div class="step"><div class="step-num">10</div><div class="step-content"><div class="step-title">Minimize Background Info</div><div class="step-desc">A little background is fine. Don't write a novel before the guide.</div></div></div>
+        <div class="step"><div class="step-num">11</div><div class="step-content"><div class="step-title">Use Pictures to Orient the Reader</div><div class="step-desc">Keep orientation consistent in photos. Say "Flip the device" when you rotate it.</div></div></div>
+        <div class="step"><div class="step-num">12</div><div class="step-content"><div class="step-title">Be Simple, Not Complex</div><div class="step-desc">People won't use your manual if they can't understand it. Plain language always wins.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Key Tips for User Manual Writing</div>
+    <div class="card-body">
+      <ul class="styled">
+        <li><strong>Write in Active Voice</strong> — "For the final step, you will need a nail and screwdriver" (not passive "A nail and screwdriver will be required").</li>
+        <li><strong>Consider the reader</strong> — Write as if they have zero experience.</li>
+        <li><strong>Write clearly and concisely</strong> — Every instruction must be as simple as possible.</li>
+        <li><strong>Address the reader directly</strong> — Creates dialogue, makes it personal.</li>
+        <li><strong>Establish standards</strong> — Have a consistent format, structure, and style throughout.</li>
+        <li><strong>Must contain both:</strong> Procedural information (step-by-step) AND Conceptual information (why/what).</li>
+        <li><strong>Answer HOW and WHAT questions.</strong></li>
+        <li><strong>Include what happens if a task is NOT done correctly.</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Tips for Manual Writing Template</div>
+    <div class="card-body">
+      <ol class="styled">
+        <li><strong>Identify the Target Audience</strong> — Their age, skill level, specialization.</li>
+        <li><strong>Always Create an Outline</strong> — Organize content into chapters first.</li>
+        <li><strong>Choose the Right Format</strong> — Helps readers find information quickly.</li>
+        <li><strong>Add Details</strong> — Write steps in detail, but briefly and concisely.</li>
+        <li><strong>Review and Edit</strong> — Let someone else test the manual and give feedback.</li>
+      </ol>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Product Manual -->
+  <div class="section-title u5"><span class="dot"></span>3. Product Manual</div>
+  <div class="section-sub">Manual specific to a physical or digital product</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u5">DEFINITION</div>
+    <div class="card-title">What is a Product Manual?</div>
+    <div class="card-body">
+      <p>A product manual (also called an Instruction Manual) is a <span class="hl">small booklet or document that informs a user or product owner about its productive use or installation</span>. It accompanies almost all electronic appliances, devices, and software.</p>
+      <p>Manufacturers create product manuals to help customers understand how to use a product efficiently. They are usually created in Word format using instruction manual templates.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">What a Product/Instruction Manual Typically Contains</div>
+    <div class="card-body">
+      <ul class="styled">
+        <li><strong>Product name</strong> and model number</li>
+        <li><strong>Package contents</strong> — list of all items in the box</li>
+        <li><strong>Safety warnings and precautions</strong></li>
+        <li><strong>Parts and components</strong> diagram</li>
+        <li><strong>Setup/Installation instructions</strong></li>
+        <li><strong>Operating instructions</strong> — step-by-step how to use</li>
+        <li><strong>Features and functions</strong></li>
+        <li><strong>Troubleshooting</strong> — common problems and solutions</li>
+        <li><strong>Maintenance</strong> instructions</li>
+        <li><strong>Technical specifications</strong></li>
+        <li><strong>Warranty information</strong></li>
+        <li><strong>Contact information</strong> for support</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">When Designing an Instruction Manual</div>
+    <div class="card-body">
+      <ul class="styled">
+        <li>Use <strong>simple and easy to understand language</strong> — even a beginner should be able to use the product.</li>
+        <li>Include <strong>diagrams and illustrations</strong> wherever possible.</li>
+        <li>Use <strong>numbered steps</strong> for sequential processes.</li>
+        <li><strong>Separate sections clearly</strong> with headings.</li>
+        <li>Include <strong>troubleshooting information</strong> that helps when the product doesn't work properly.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Operations Manual -->
+  <div class="section-title u5"><span class="dot"></span>4. Operations Manual</div>
+  <div class="section-sub">The company "encyclopedia" — how the business runs</div>
+
+  <div class="card">
+    <div class="topic-tag tag-u5">DEFINITION</div>
+    <div class="card-title">What is an Operations Manual?</div>
+    <div class="card-body">
+      <p>An operations manual is a <span class="hl">comprehensive document that outlines the standard procedures, policies, and systems a business uses to operate efficiently</span>. Think of it as the ultimate "how-to" guide or company encyclopedia, detailing everything from daily tasks to emergency protocols.</p>
+      <p>It is also defined as: the documentation by which an organization provides guidance for members and employees to <strong>perform their functions correctly and reasonably efficiently</strong>.</p>
+      <p>An operations manual is <strong>either a book or folder</strong> of printed documents containing standard operating procedures (SOPs), organizational hierarchy, contact details, and emergency procedures.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Key Components of an Operations Manual (6 Main Sections)</div>
+    <div class="card-body">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" style="background:var(--unit5);color:#111;">1</div>
+          <div class="step-content">
+            <div class="step-title">Introduction &amp; Company Overview</div>
+            <div class="step-desc">Mission &amp; Vision, Company History, Culture &amp; Core Values.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:var(--unit5);color:#111;">2</div>
+          <div class="step-content">
+            <div class="step-title">Organization &amp; Roles</div>
+            <div class="step-desc">Organizational Chart (visual map of roles and reporting lines). Job Descriptions with specific responsibilities and authority.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:var(--unit5);color:#111;">3</div>
+          <div class="step-content">
+            <div class="step-title">Standard Operating Procedures (SOPs)</div>
+            <div class="step-desc">The CORE of the manual. Step-by-step instructions for recurring tasks. Example: Onboarding process, Customer support, Daily maintenance.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:var(--unit5);color:#111;">4</div>
+          <div class="step-content">
+            <div class="step-title">Business Policies &amp; Guidelines</div>
+            <div class="step-desc">Working hours, PTO, dress codes. IT &amp; Security policies. Expense &amp; Travel guidelines.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:var(--unit5);color:#111;">5</div>
+          <div class="step-content">
+            <div class="step-title">Emergency &amp; Contingency Protocols</div>
+            <div class="step-desc">Crisis management instructions. Contact directories, escalation matrix.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num" style="background:var(--unit5);color:#111;">6</div>
+          <div class="step-content">
+            <div class="step-title">Resources</div>
+            <div class="step-desc">Tech stack directory, vendor list, software subscriptions and admin access details.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Why an Operations Manual is Essential (3 Key Benefits)</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Benefit</th><th>Explanation</th></tr>
+        <tr><td><strong>Easier Onboarding</strong></td><td>New employees can get up to speed faster by referencing the manual instead of shadowing a trainer indefinitely.</td></tr>
+        <tr><td><strong>Operational Consistency</strong></td><td>Ensures every task is performed the same way, maintaining quality and reducing costly human error.</td></tr>
+        <tr><td><strong>Business Scalability</strong></td><td>Standardized processes make it easier to expand, open new locations, or eventually sell the company.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Tips for Writing an Operations Manual</div>
+    <div class="card-body">
+      <ol class="styled">
+        <li><strong>Create an Outline</strong> — Put together all SOPs before writing. This ensures you don't miss anything.</li>
+        <li><strong>Write the Intro</strong> — Give readers a brief outline of what the manual covers and how to read it.</li>
+        <li><strong>Write the First Task</strong> — Follow your outline, write each task and its steps accurately and concisely.</li>
+        <li><strong>Have Someone Review</strong> — Let actual users of the manual review it for feedback.</li>
+        <li><strong>Edit</strong> — Revise based on feedback. Critical step for clarity.</li>
+        <li><strong>Bind and Distribute</strong> — Make copies, bind the SOPs, distribute to all who need it.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u5">IMPORTANT POINTS</div>
+    <div class="card-title">Key Facts to Remember About Operations Manual</div>
+    <div class="card-body">
+      <ul class="styled">
+        <li>It does <strong>NOT substitute for training</strong>, but should allow a trained and competent person to adapt to the organization's specific procedures.</li>
+        <li>It should be <strong>periodically reviewed and updated</strong> to remain current.</li>
+        <li>Compliance with the operations manual is considered <strong>activity approved by the legally responsible persons</strong> of the organization.</li>
+        <li>A good manual will <strong>reduce human error</strong> and inform everyone what they need to do, who they are responsible to, and who they are responsible for.</li>
+        <li>It is a <strong>knowledge base</strong> for the organization and should be available for reference whenever needed.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-tag tag-u5">TEMPLATE EXAMPLE</div>
+    <div class="card-title">Operations Manual Template (from your PDF)</div>
+    <div class="card-body">
+      <div class="format-box">OPERATIONS MANUAL – [ORGANIZATION NAME]
+
+A. CRITICAL ORGANIZATION INFORMATION
+   - Bank Information
+   - Lawyer's Details
+   - Mailing Address
+   - Tax ID / Accountant
+   - Payroll Information
+   - Insurance Policies
+   - Vendor Information
+
+B. ONLINE SERVICES ACCOUNTS
+   - Usernames / Passwords (stored in paper files)
+   - List of all online service subscriptions
+
+C. HUMAN RESOURCES INFORMATION
+   - Personnel Policy
+   - Medical / Dental Insurance setup
+   - Workers Compensation
+
+D. RECURRING OPERATIONAL TASKS:
+   WEEKLY:
+   - Update website
+   - Check registrations for events
+   - Enter/update database records
+   - Back up organizational folder
+
+   MONTHLY:
+   - Payroll processing
+   - Credit card reconciliation
+   - Bank statement reconciliation
+
+   QUARTERLY:
+   - Submit board updates + financial statements
+
+   ANNUALLY:
+   - Prepare files for annual review
+   - Renew insurance
+   - File with government agencies
+
+E. EVENTS PROCEDURES
+   - Step-by-step procedures for running events</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Comparison Table -->
+  <div class="section-title u5"><span class="dot"></span>5. Comparison – All Three Manuals</div>
+
+  <div class="card">
+    <div class="card-title">User Manual vs Product Manual vs Operations Manual</div>
+    <div class="card-body">
+      <table>
+        <tr><th>Feature</th><th>User Manual</th><th>Product Manual / Instruction Manual</th><th>Operations Manual</th></tr>
+        <tr><td><strong>Purpose</strong></td><td>Help users use a product</td><td>Guide users through product installation, use, troubleshooting</td><td>Guide employees on how to run the business</td></tr>
+        <tr><td><strong>Audience</strong></td><td>End-users / customers</td><td>Product buyers / customers</td><td>Employees / staff members</td></tr>
+        <tr><td><strong>Scope</strong></td><td>A specific product or system</td><td>A specific product</td><td>Entire organization / business</td></tr>
+        <tr><td><strong>Contents</strong></td><td>Instructions, troubleshooting, features, specs</td><td>Package contents, safety, setup, operating steps, specs, warranty</td><td>SOPs, org chart, policies, emergency protocols, resources</td></tr>
+        <tr><td><strong>Core of document</strong></td><td>How-to steps</td><td>Step-by-step operational instructions</td><td>Standard Operating Procedures (SOPs)</td></tr>
+        <tr><td><strong>Example</strong></td><td>iPhone user manual</td><td>Camera instruction booklet</td><td>Restaurant operations guide for staff</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="tip-box"><strong>📝 Final Exam Tips:</strong><br>
+  1. <strong>User Manual</strong> — Focus on: 12 writing steps, active voice, audience-first approach, HOW &amp; WHAT questions.<br>
+  2. <strong>Product Manual</strong> — Focus on: what it contains (package contents, safety warnings, setup, specs, warranty).<br>
+  3. <strong>Operations Manual</strong> — Focus on: 6 key components (especially SOPs), 3 benefits (onboarding, consistency, scalability), and the fact that it's the company "encyclopedia."</div>
+
+</div><!-- end u5 pane -->
+
+<script>
+  function showPane(id, btn) {
+    document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.nav-tab').forEach(t => {
+      t.className = 'nav-tab';
+    });
+    btn.className = 'nav-tab active-' + id;
+  }
+</script>
+</body>
+</html>
